@@ -1,0 +1,23 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+   
+    body{
+        @apply bg-[#f1f1f1];
+        @apply min-w-[375px];
+    }
+    h1{
+        @apply text-xl;
+        @apply md:text-2xl;
+        @apply font-extrabold;
+        
+    }
+    h2{
+        @apply text-lg;
+        @apply md:text-xl;
+        @apply font-semibold;
+    }
+}
