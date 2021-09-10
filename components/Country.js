@@ -9,8 +9,7 @@ const Country = ({ country }) => {
                 <div className="h-full w-full dark:bg-[#2b3945] bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 duration-500 transform transition">
                     <Link href={`/${country?.alpha2Code.toLowerCase() || country?.alpha3Code}?country=${country.name}`}>
                         <a>
-                            // added unoptimized to avoid problems caused by lazy loading
-                            <Image src={country?.flag} alt={country?.name} width={350} height={200} layout="responsive" objectFit="cover" objectPosition="center"className='cursor-pointer' unoptimized />
+                            <Image src={country?.flag} alt={country?.name} width={350} height={200} layout="responsive" objectFit="cover" objectPosition="center"className='cursor-pointer' />
                         </a>
                     </Link>
                         <div className="dark:bg-[#2b3945] p-5 m-1 ">
