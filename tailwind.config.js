@@ -5,9 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Nunito Sans', "sans - serif"],
-        poppins: ['Poppins'],
-        playfair: ['Playfair Display']
+        sans: ['Nunito Sans', "sans - serif"]
       }
     },
     typography: (theme) => ({
