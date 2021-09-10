@@ -23,8 +23,8 @@ const Countries = ({ countries }) => {
                     value={searchTerm} onChange={e => searchTermSet(e.target.value)}
                     className=" w-full -ml-8 pl-12 dark:bg-[#2b3945] px-4 py-3 rounded-md focus:outline-none focus:border-gray-200" />
             </div>
-            <div className=" inline-block relative w-40">
-                <select onChange={selectRegion}
+            <div className=" inline-block relative w-40" id='regions'>
+                <select onChange={selectRegion} aria-labelledby='regions'
                     className="dark:bg-[#2b3945] appearance-none block w-full py-3 px-4 pr-8 rounded-md leading-tight focus:outline-none" >
                     <option>Filter by region</option>
                     {regions.map((region, i) => <option key={i} value={region}>{region}</option>)}
