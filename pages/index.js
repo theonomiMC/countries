@@ -16,7 +16,7 @@ export default function Home({ countries }) {
 
 // useing getStaticProps cause there is no change in countries
 export async function getStaticProps() {
-  const response = await fetch("https://restcountries.eu/rest/v2/all")
+  const response = await fetch("https://restcountries.com/v2/all")
   const data = await response.json()
 
   if (!data) {
