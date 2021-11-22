@@ -87,7 +87,7 @@ export async function getStaticPaths() {
             params: { countryCode: `${c.alpha2Code}` }
         }))
     }
-    return { paths, fallback: true }
+    return { paths:[], fallback: true }
 }
 
 export async function getStaticProps({ params }) {
