@@ -91,7 +91,7 @@ export async function getStaticProps({ params }) {
     const responseCountry = await fetch(`${countriesUrl}/alpha/${params.countryCode}`)
     let responseBorders, neighbors;
     const country = await responseCountry.json().catch(e => console.log(e.message))
-    const borderCountries = country?.borders ? country?.borders.join(';') : []
+    const borderCountries = country?.borders ? country?.borders.join(',') : []
 
     if (borderCountries) {
         responseBorders = await fetch(`${countriesUrl}/alpha?codes=${borderCountries}`)
