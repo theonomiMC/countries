@@ -75,10 +75,10 @@ const CountryInfo = ({ country, neighbors }) => {
 
 export default CountryInfo
 
-const countriesUrl = `https://restcountries.eu/rest/v2`
+const countriesUrl = `https://restcountries.com/v2`
 
 export async function getStaticPaths() {
-    const response = await fetch(countriesUrl)
+    const response = await fetch(countriesUrl/all)
     const countries = await response.json()
     const paths = countries.map(c => ({
         params: { countryCode: `${c.alpha2Code}` }
@@ -91,7 +91,7 @@ export async function getStaticProps({ params }) {
     const responseCountry = await fetch(`${countriesUrl}/alpha/${params.countryCode}`)
     let responseBorders, neighbors;
     const country = await responseCountry.json().catch(e => console.log(e.message))
-    const borderCountries = country ? country?.borders.join(';') : []
+    const borderCountries = country?.borders ? country?.borders.join(';') : []
 
     if (borderCountries) {
         responseBorders = await fetch(`${countriesUrl}/alpha?codes=${borderCountries}`)
