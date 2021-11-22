@@ -78,12 +78,15 @@ export default CountryInfo
 const countriesUrl = `https://restcountries.com/v2`
 
 export async function getStaticPaths() {
+    let countries
     const response = await fetch(`${countriesUrl}/all`)
-    const countries = await response.json()
-    const paths = countries.map(c => ({
-        params: { countryCode: `${c.alpha2Code}` }
-    }))
-
+    countries = await response.json()
+    if ( countries.length ){
+        
+        const paths = countries.map(c => ({
+            params: { countryCode: `${c.alpha2Code}` }
+        }))
+    }
     return { paths, fallback: true }
 }
 
